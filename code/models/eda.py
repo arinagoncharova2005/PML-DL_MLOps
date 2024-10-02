@@ -15,6 +15,10 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import joblib
+import os
+
+BASE_PATH = os.getenv('PROJECTPATH')
+
 
 # This function returns the dataframe with encoded features
 # @param dataframe - initial DataFrame
@@ -54,48 +58,48 @@ def preprocess_data(X, y = None):
     return X_train, X_test, y_train, y_test, encoder, scaler
 
 
+if __name__ == '__main__':
+    data = pd.read_csv(f'{BASE_PATH}/code/datasets/car_data.csv')
+    data.head()
 
-data = pd.read_csv('/Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/code/datasets/car_data.csv')
-data.head()
-
-X = data.drop(['Car_Name', 'Selling_Price'], axis=1)
-y = data['Selling_Price']
-print(data.columns)
-
-
-print('hello')
-X_train, X_test, y_train, y_test, encoder, scaler = preprocess_data(X, y)
-print(X_train)
-print('Columns with missing values in data: ', list(X_train.columns[X_train.isnull().any()]))
-print('Columns with missing values in data: ', list(X_test.columns[X_train.isnull().any()]))
+    X = data.drop(['Car_Name', 'Selling_Price'], axis=1)
+    y = data['Selling_Price']
+    print(data.columns)
 
 
-# Scaling data
+    print('hello')
+    X_train, X_test, y_train, y_test, encoder, scaler = preprocess_data(X, y)
+    print(X_train)
+    print('Columns with missing values in data: ', list(X_train.columns[X_train.isnull().any()]))
+    print('Columns with missing values in data: ', list(X_test.columns[X_train.isnull().any()]))
 
 
-# Apply the scaler on both train and test features
-# X_train = pd.DataFrame(scaler.transform(X_train), columns = X_train.columns)
-# X_test = pd.DataFrame(scaler.transform(X_test), columns = X_test.columns)
-# X_test
-
-# Create a model
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Predict the values
-y_pred = model.predict(X_test)
-
-# Calculate the error
-error = mean_squared_error(y_test, y_pred)
-print('Mean squared error: ', error)
-r2 = r2_score(y_test, y_pred)
-print('R2 score: ', r2)
-filename = './models/model.pkl'
-pickle.dump(model, open(filename, 'wb'))
+    # Scaling data
 
 
-scaler_filename = "./models/scaler.save"
-joblib.dump(scaler, scaler_filename) 
+    # Apply the scaler on both train and test features
+    # X_train = pd.DataFrame(scaler.transform(X_train), columns = X_train.columns)
+    # X_test = pd.DataFrame(scaler.transform(X_test), columns = X_test.columns)
+    # X_test
 
-encoder_filename = "./models/encoder.save"
-joblib.dump(encoder, encoder_filename) 
+    # Create a model
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+
+    # Predict the values
+    y_pred = model.predict(X_test)
+
+    # Calculate the error
+    error = mean_squared_error(y_test, y_pred)
+    print('Mean squared error: ', error)
+    r2 = r2_score(y_test, y_pred)
+    print('R2 score: ', r2)
+    filename = f'{BASE_PATH}/models/model.pkl'
+    pickle.dump(model, open(filename, 'wb'))
+
+
+    scaler_filename = f"{BASE_PATH}/models/scaler.save"
+    joblib.dump(scaler, scaler_filename) 
+
+    encoder_filename = f"{BASE_PATH}/models/encoder.save"
+    joblib.dump(encoder, encoder_filename) 

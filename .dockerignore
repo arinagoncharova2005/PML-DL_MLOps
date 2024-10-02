@@ -1,0 +1,5 @@
+code/deployment/docker-compose.yaml
+code/deployment/api/Dockerfile.fastapi
+code/deployment/app/Dockerfile.streamlit
+.venv
+code/datasets

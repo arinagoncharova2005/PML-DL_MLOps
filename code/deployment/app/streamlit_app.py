@@ -1,12 +1,17 @@
 # streamlit_app.py
 import streamlit as st
 import requests
+import os
+import sys
+
+BASE_PATH = os.getenv('PROJECTPATH')
+sys.path.append(BASE_PATH+"/code")
 
 # FastAPI endpoint
-FASTAPI_URL = "http://localhost:8000/predict"
+FASTAPI_URL = "http://fastapi:8000/predict"
 
 # Streamlit app UI
-st.title("Iris Flower Classifier")
+st.title("Car Price Prediction 🚗")
 
 
 fuel_types = ["Petrol", "Diesel", "CNG"]

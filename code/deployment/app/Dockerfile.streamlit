@@ -1,0 +1,16 @@
+# Streamlit Dockerfile
+FROM python:3.9
+
+ENV PROJECTPATH=/pmldlapp
+
+RUN pip install streamlit requests
+
+# Copy the current directory contents into the container at /app
+COPY code/deployment/app /pmldlapp/code/deployment/app   
+COPY models /pmldlapp/models
+
+WORKDIR /pmldlapp/code/deployment/app
+
+
+# Command to run the Streamlit app
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]

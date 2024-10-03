@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/769303085010403870/d0ce97cf96854be185ba350c1ea923ca/artifacts
+end_time: 1727982615529
+entry_point_name: ''
+experiment_id: '769303085010403870'
+lifecycle_stage: active
+run_id: d0ce97cf96854be185ba350c1ea923ca
+run_name: charming-fish-489
+run_uuid: d0ce97cf96854be185ba350c1ea923ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982613850
+status: 3
+tags: []
+user_id: arinagoncharova

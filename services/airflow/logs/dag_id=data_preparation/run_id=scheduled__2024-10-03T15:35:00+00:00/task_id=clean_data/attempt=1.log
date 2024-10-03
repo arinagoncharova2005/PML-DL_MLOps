@@ -1,0 +1,92 @@
+[2024-10-03T15:46:44.208+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-03T15:46:44.606+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_preparation.clean_data scheduled__2024-10-03T15:35:00+00:00 [queued]>
+[2024-10-03T15:46:44.681+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_preparation.clean_data scheduled__2024-10-03T15:35:00+00:00 [queued]>
+[2024-10-03T15:46:44.701+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-03T15:46:45.008+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): clean_data> on 2024-10-03 15:35:00+00:00
+[2024-10-03T15:46:45.228+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=12464) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-03T15:46:45.230+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'data_preparation', 'clean_data', 'scheduled__2024-10-03T15:35:00+00:00', '--job-id', '366', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmppqnwuoza']
+[2024-10-03T15:46:45.258+0000] {standard_task_runner.py:105} INFO - Job 366: Subtask clean_data
+[2024-10-03T15:46:45.260+0000] {standard_task_runner.py:72} INFO - Started process 12505 to run task
+[2024-10-03T15:47:53.428+0000] {job.py:229} INFO - Heartbeat recovered after 70.32 seconds
+[2024-10-03T15:47:59.830+0000] {task_command.py:467} INFO - Running <TaskInstance: data_preparation.clean_data scheduled__2024-10-03T15:35:00+00:00 [running]> on host 8e64ac78d004
+[2024-10-03T15:48:58.470+0000] {job.py:229} INFO - Heartbeat recovered after 55.71 seconds
+[2024-10-03T16:03:19.482+0000] {local_task_job_runner.py:228} ERROR - Heartbeat time limit exceeded!
+[2024-10-03T16:03:30.340+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-10-03T16:03:41.373+0000] {process_utils.py:132} INFO - Sending 15 to group 12505. PIDs of all processes in the group: [12505]
+[2024-10-03T16:03:43.125+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 12505
+[2024-10-03T16:03:47.115+0000] {taskinstance.py:3092} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-10-03T16:04:00.010+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3122, in _execute_task_with_callbacks
+    _update_rtif(ti=self, rendered_fields=rendered_fields)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 139, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1642, in _update_rtif
+    RenderedTaskInstanceFields.delete_old_records(ti.task_id, ti.dag_id, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/renderedtifields.py", line 265, in delete_old_records
+    cls._do_delete_old_records(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 93, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 102, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/renderedtifields.py", line 299, in _do_delete_old_records
+    session.execute(stmt)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2138, in _handle_dbapi_exception
+    util.raise_(exc_info[1], with_traceback=exc_info[2])
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.12/encodings/utf_8.py", line 15, in decode
+    def decode(input, errors='strict'):
+    
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3094, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2024-10-03T16:04:20.884+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=data_preparation, task_id=clean_data, run_id=scheduled__2024-10-03T15:35:00+00:00, execution_date=20241003T153500, start_date=20241003T154644, end_date=20241003T160419
+[2024-10-03T16:04:33.629+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-03T16:04:38.890+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=12505, status='terminated', exitcode=2, started='15:46:44') (12505) terminated with exit code 2
+[2024-10-03T16:04:43.876+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics

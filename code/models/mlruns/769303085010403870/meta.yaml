@@ -1,0 +1,6 @@
+artifact_location: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/769303085010403870
+creation_time: 1727982613777
+experiment_id: '769303085010403870'
+last_update_time: 1727982613777
+lifecycle_stage: active
+name: MLflow experiment 01

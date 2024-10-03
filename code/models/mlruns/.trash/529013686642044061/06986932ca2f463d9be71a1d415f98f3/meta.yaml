@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/529013686642044061/06986932ca2f463d9be71a1d415f98f3/artifacts
+deleted_time: 1727984597807
+end_time: 1727982095422
+entry_point_name: ''
+experiment_id: '529013686642044061'
+lifecycle_stage: deleted
+run_id: 06986932ca2f463d9be71a1d415f98f3
+run_name: grandiose-foal-43
+run_uuid: 06986932ca2f463d9be71a1d415f98f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982095415
+status: 3
+tags: []
+user_id: arinagoncharova

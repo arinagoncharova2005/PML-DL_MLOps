@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/769303085010403870/64ea1afa71914f67a0652ba5717ca129/artifacts
+end_time: 1727984866884
+entry_point_name: ''
+experiment_id: '769303085010403870'
+lifecycle_stage: active
+run_id: 64ea1afa71914f67a0652ba5717ca129
+run_name: run 01
+run_uuid: 64ea1afa71914f67a0652ba5717ca129
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727984865417
+status: 3
+tags: []
+user_id: arinagoncharova

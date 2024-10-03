@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/529013686642044061/d2a195ec68fb4ae7a992586d1c92d1ac/artifacts
+deleted_time: 1727984597807
+end_time: 1727982375522
+entry_point_name: ''
+experiment_id: '529013686642044061'
+lifecycle_stage: deleted
+run_id: d2a195ec68fb4ae7a992586d1c92d1ac
+run_name: rumbling-skink-741
+run_uuid: d2a195ec68fb4ae7a992586d1c92d1ac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982373325
+status: 3
+tags: []
+user_id: arinagoncharova

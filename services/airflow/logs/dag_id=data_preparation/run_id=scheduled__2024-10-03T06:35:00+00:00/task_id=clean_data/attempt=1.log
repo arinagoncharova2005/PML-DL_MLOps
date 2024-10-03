@@ -1,0 +1,33 @@
+[2024-10-03T07:24:53.421+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-03T07:24:53.435+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_preparation.clean_data scheduled__2024-10-03T06:35:00+00:00 [queued]>
+[2024-10-03T07:24:53.441+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_preparation.clean_data scheduled__2024-10-03T06:35:00+00:00 [queued]>
+[2024-10-03T07:24:53.441+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-03T07:24:53.449+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): clean_data> on 2024-10-03 06:35:00+00:00
+[2024-10-03T07:24:53.478+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4187) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-03T07:24:53.482+0000] {standard_task_runner.py:72} INFO - Started process 4204 to run task
+[2024-10-03T07:24:53.483+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'data_preparation', 'clean_data', 'scheduled__2024-10-03T06:35:00+00:00', '--job-id', '184', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpbjdzh36e']
+[2024-10-03T07:24:53.487+0000] {standard_task_runner.py:105} INFO - Job 184: Subtask clean_data
+[2024-10-03T07:24:53.540+0000] {task_command.py:467} INFO - Running <TaskInstance: data_preparation.clean_data scheduled__2024-10-03T06:35:00+00:00 [running]> on host 8e64ac78d004
+[2024-10-03T07:24:53.614+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_preparation' AIRFLOW_CTX_TASK_ID='clean_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-03T06:35:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-03T06:35:00+00:00'
+[2024-10-03T07:24:53.618+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-03T07:24:53.749+0000] {python.py:240} INFO - Done. Returned value was:      Year  Selling_Price  Present_Price  ...  Seller_Type Transmission Owner
+0    2014           3.35           5.59  ...       Dealer       Manual     0
+1    2013           4.75           9.54  ...       Dealer       Manual     0
+2    2017           7.25           9.85  ...       Dealer       Manual     0
+3    2011           2.85           4.15  ...       Dealer       Manual     0
+4    2014           4.60           6.87  ...       Dealer       Manual     0
+..    ...            ...            ...  ...          ...          ...   ...
+296  2016           9.50          11.60  ...       Dealer       Manual     0
+297  2015           4.00           5.90  ...       Dealer       Manual     0
+298  2009           3.35          11.00  ...       Dealer       Manual     0
+299  2017          11.50          12.50  ...       Dealer       Manual     0
+300  2016           5.30           5.90  ...       Dealer       Manual     0
+
+[301 rows x 8 columns]
+[2024-10-03T07:24:53.813+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-03T07:24:53.814+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=data_preparation, task_id=clean_data, run_id=scheduled__2024-10-03T06:35:00+00:00, execution_date=20241003T063500, start_date=20241003T072453, end_date=20241003T072453
+[2024-10-03T07:24:53.873+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-03T07:24:53.913+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-03T07:24:53.914+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

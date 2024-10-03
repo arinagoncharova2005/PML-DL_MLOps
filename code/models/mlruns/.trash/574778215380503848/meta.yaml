@@ -1,0 +1,7 @@
+artifact_location: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/574778215380503848
+creation_time: 1727982949018
+experiment_id: '574778215380503848'
+last_update_time: 1727983190320
+lifecycle_stage: deleted
+name: Simple Linear Regression Experiment
+tags: {}

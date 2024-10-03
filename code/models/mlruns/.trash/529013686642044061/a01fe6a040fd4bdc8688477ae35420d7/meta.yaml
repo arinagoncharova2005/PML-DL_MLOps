@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/529013686642044061/a01fe6a040fd4bdc8688477ae35420d7/artifacts
+deleted_time: 1727984597807
+end_time: 1727982526702
+entry_point_name: ''
+experiment_id: '529013686642044061'
+lifecycle_stage: deleted
+run_id: a01fe6a040fd4bdc8688477ae35420d7
+run_name: merciful-owl-11
+run_uuid: a01fe6a040fd4bdc8688477ae35420d7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982525093
+status: 3
+tags: []
+user_id: arinagoncharova

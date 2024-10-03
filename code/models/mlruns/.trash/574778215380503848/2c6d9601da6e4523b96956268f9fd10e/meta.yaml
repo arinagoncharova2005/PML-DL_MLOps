@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/574778215380503848/2c6d9601da6e4523b96956268f9fd10e/artifacts
+deleted_time: 1727983190320
+end_time: 1727982950936
+entry_point_name: ''
+experiment_id: '574778215380503848'
+lifecycle_stage: deleted
+run_id: 2c6d9601da6e4523b96956268f9fd10e
+run_name: painted-mink-282
+run_uuid: 2c6d9601da6e4523b96956268f9fd10e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982949109
+status: 3
+tags: []
+user_id: arinagoncharova

@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/529013686642044061/e7f1353f55684ebb95be67e0e4b2e1e2/artifacts
+deleted_time: 1727984597807
+end_time: 1727982375547
+entry_point_name: ''
+experiment_id: '529013686642044061'
+lifecycle_stage: deleted
+run_id: e7f1353f55684ebb95be67e0e4b2e1e2
+run_name: fearless-auk-517
+run_uuid: e7f1353f55684ebb95be67e0e4b2e1e2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982375538
+status: 3
+tags: []
+user_id: arinagoncharova

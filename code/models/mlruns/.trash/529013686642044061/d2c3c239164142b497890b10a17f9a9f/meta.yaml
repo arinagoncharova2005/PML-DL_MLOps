@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/arinagoncharova/Documents/InnoUni/PMLDL_MLOps/services/airflow/dags/mlruns/529013686642044061/d2c3c239164142b497890b10a17f9a9f/artifacts
+deleted_time: 1727984597807
+end_time: 1727982095409
+entry_point_name: ''
+experiment_id: '529013686642044061'
+lifecycle_stage: deleted
+run_id: d2c3c239164142b497890b10a17f9a9f
+run_name: nosy-croc-100
+run_uuid: d2c3c239164142b497890b10a17f9a9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727982093839
+status: 3
+tags: []
+user_id: arinagoncharova

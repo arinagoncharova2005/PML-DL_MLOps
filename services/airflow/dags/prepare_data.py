@@ -8,8 +8,6 @@ import os
 
 BASE_PATH = os.getenv('PROJECTPATH')
 
-# A DAG represents a workflow, a collection of tasks
-# This DAG is scheduled to print 'hello world' every minute starting from 01.01.2022.
 with DAG(dag_id="data_preparation", 
 		 start_date=datetime(2024, 10, 2),
          catchup=False,

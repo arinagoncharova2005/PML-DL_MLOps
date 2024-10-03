@@ -10,6 +10,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 import os
+mlflow.set_tracking_uri("http://mlflow-server:5000")
 
 BASE_PATH = os.getenv('PROJECTPATH')
 
@@ -68,10 +69,6 @@ def construct_features():
 
 def train_model(X_train, y_train):
         
-        # Log hyperparameters
-        # mlflow.log_param("model_type", "LinearRegression")
-        # mlflow.log_param("encoder_type", "OneHotEncoder")
-        # mlflow.log_param("scaler_type", "MinMaxScaler")
         params = {
             "model_type": "LinearRegression",
             "encoder_type": "OneHotEncoder",
@@ -105,7 +102,7 @@ def evaluate_model(X_test, y_test):
     mlflow.log_metric("mean_squared_error", error)
     mlflow.log_metric("r2_score", r2)
 
-if __name__ == '__main__':
+def main():
     experiment_name = "MLflow experiment 01"
     run_name = "run 01"
     try:
@@ -121,3 +118,6 @@ if __name__ == '__main__':
         X_train, X_test, y_train, y_test = construct_features()
         train_model(X_train, y_train)
         evaluate_model(X_test, y_test)
+
+if __name__ == '__main__':
+    main()

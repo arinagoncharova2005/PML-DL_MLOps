@@ -81,6 +81,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${PROJECTPATH}:/pmldlapp
+
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -287,6 +288,15 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
+
+  mlflow-server:
+    build:
+          context: ../../
+          dockerfile: services/mlflow/Dockerfile.mlflow
+    ports:
+      - "5001:5000"
+    volumes:
+      - ${PROJECTPATH}:/pmldlapp
 
 volumes:
   postgres-db-volume:
